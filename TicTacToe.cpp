@@ -42,14 +42,16 @@ int main()
                     State = 0;
                 }
             }
-            for (int i = 0; i < 2; i++) {
-                if (CheckBoard[i] == PlayersTurn && CheckBoard[i] == CheckBoard[i + 3] && CheckBoard[i] == CheckBoard[i + 6]) {
-                    State = PlayersTurn;
-                }
-            }
             for (int j = 0; j < 2; j++) {
                 if (CheckBoard[j] == PlayersTurn && CheckBoard[j] == CheckBoard[j + 1] && CheckBoard[j] == CheckBoard[j + 2]) {
                     State = PlayersTurn;
+                }
+            }
+            if (ChosenSpace == 0 || ChosenSpace % 3 == 0) {
+                for (int i = 0; i < 2; i++) {
+                    if (CheckBoard[i] == PlayersTurn && CheckBoard[i] == CheckBoard[i + 3] && CheckBoard[i] == CheckBoard[i + 6]) {
+                        State = PlayersTurn;
+                    }
                 }
             }
             if (ChosenSpace % 2 == 0) {
