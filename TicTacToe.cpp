@@ -43,6 +43,7 @@ int main()
                 }
             }
             for (int j = 0; j < 2; j++) {
+                j = j * 3;
                 if (CheckBoard[j] == PlayersTurn && CheckBoard[j] == CheckBoard[j + 1] && CheckBoard[j] == CheckBoard[j + 2]) {
                     State = PlayersTurn;
                 }
