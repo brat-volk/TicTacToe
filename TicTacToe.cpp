@@ -47,13 +47,12 @@ int main()
                     State = PlayersTurn;
                 }
             }
-            if (ChosenSpace == 0 || ChosenSpace % 3 == 0) {
-                for (int i = 0; i < 2; i++) {
-                    if (CheckBoard[i] == PlayersTurn && CheckBoard[i] == CheckBoard[i + 3] && CheckBoard[i] == CheckBoard[i + 6]) {
-                        State = PlayersTurn;
-                    }
+            for (int i = 0; i < 2; i++) {
+                if (CheckBoard[i] == PlayersTurn && CheckBoard[i] == CheckBoard[i + 3] && CheckBoard[i] == CheckBoard[i + 6]) {
+                    State = PlayersTurn;
                 }
             }
+            
             if (ChosenSpace % 2 == 0) {
                 if (CheckBoard[0] == PlayersTurn && CheckBoard[0] == CheckBoard[4] && CheckBoard[0] == CheckBoard[8]) {
                     State = PlayersTurn;
